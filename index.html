@@ -84,8 +84,8 @@
     <h2>Formulir Pembelian</h2> 
     <p id="item-info"></p> <label for="jumlah">Total Beli:</label> 
     <input type="number" id="jumlah" min="1" value="1" onchange="hitungTotal()"> 
-    <p>Total Harga: <span id="total-harga">Rp. 0</span></p> <label for="nama-world">Nama World:</label> 
-    <input type="text" id="nama-world"> <label for="owner-world">Owner World:</label> 
+    <p>Total Harga: <span id="total-harga">Rp. 0</span></p> <label for="atas-nama">Atas Nama:</label> 
+    <input type="text" id="nama-world"> <label for="no-rekening">No Rekening:</label> 
     <input type="text" id="owner-world"> <label>Metode Pembayaran:</label> 
     <div class="payment-options"> 
      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwtRpAICKjKIeUmkSVYsuBa0Is2ILtR-gIqDAwtpITkEpoYe77eL_MkFeU&amp;s=10" id="dana" onclick="pilihPembayaran('Dana')"> 
@@ -123,13 +123,13 @@
         let jumlah = document.getElementById("jumlah").value;
         let harga = localStorage.getItem("harga");
         let totalHarga = jumlah * harga;
-        let namaWorld = document.getElementById("nama-world").value;
-        let ownerWorld = document.getElementById("owner-world").value;
-        if (namaWorld === "" || ownerWorld === "" || metodePembayaran === "") {
+        let atasNama = document.getElementById("atas-nama").value;
+        let noreKening = document.getElementById("no-rekening").value;
+        if (atasNama === "" || NoRekening === "" || metodePembayaran === "") {
             alert("Harap isi semua data!");
             return;
         }
-        let pesan = `Total Beli: ${jumlah} ${item}%0A•Total Harga: Rp. ${totalHarga.toLocaleString()}%0A•Nama World: ${namaWorld}%0A•Owner World: ${ownerWorld}%0A•Metode Pembayaran: ${metodePembayaran}`;
+        let pesan = `Total Beli: ${jumlah} ${item}%0A•Total Harga: Rp. ${totalHarga.toLocaleString()}%0A•Atas Nama: ${atasNama}%0A•No Rekening: ${noRekening}%0A•Metode Pembayaran: ${metodePembayaran}`;
         let linkWA = `https://wa.me/628988977955?text=${pesan}`;
         window.location.href = linkWA;
     }
